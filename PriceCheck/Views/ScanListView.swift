@@ -14,12 +14,7 @@ struct ScanListView: View {
   
     NavigationView {
       List {
-        ForEach(locationScans) { location in
-          Section(header: Text(location.name), content: {
-            ForEach(location.scans.sorted(by: { $0 < $1 })) { scan in
-              Text(scan.item)
-            }
-          })
+        ForEach(locationScans) { location in LocationView(location)
         }
       }.navigationBarTitle("Scans")
     }
